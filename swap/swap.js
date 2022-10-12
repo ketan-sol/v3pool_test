@@ -6,10 +6,8 @@ const {
 const SwapRouterABI = require('../helper/SWAP_ROUTER_ABI.json');
 const ERC20ABI = require('../helper/ERC20_ABI.json');
 
-const MATIC_PROVIDER = new ethers.providers.WebSocketProvider(
-  // 'wss://morning-special-sunset.matic-testnet.discover.quiknode.pro/3cba8f03afef9f9838e419a690406637b96b7586/'
-  'wss://summer-light-wish.matic-testnet.discover.quiknode.pro/8f7e90fd4de6b8cfeab31b358f7f2ee6a9520c24/'
-  //'https://morning-special-sunset.matic-testnet.discover.quiknode.pro/3cba8f03afef9f9838e419a690406637b96b7586/' //${process.env.API_KEY}`
+const MATIC_PROVIDER = new ethers.providers.JsonRpcProvider(
+  `https://polygon-mumbai.g.alchemy.com/v2/${process.env.API_KEY}`
 );
 const WALLET_SECRET = process.env.PRIVATE_KEY;
 const poolAddress = '0xeA22649f86Ee72AFc14223e171f3374720418b9d';
